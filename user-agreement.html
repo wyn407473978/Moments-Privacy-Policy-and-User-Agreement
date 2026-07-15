@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111412" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Moments 用户协议，说明应用服务、用户内容、Moments Pro 购买以及使用规则。">
+  <title>用户协议 · Moments</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --page: #f6f2ea;
+      --surface: rgba(255, 255, 255, 0.78);
+      --surface-strong: #fffdf8;
+      --text: #272923;
+      --muted: #6f7169;
+      --line: rgba(39, 41, 35, 0.12);
+      --accent: #64705b;
+      --accent-soft: #e5e8df;
+      --shadow: 0 24px 70px rgba(54, 48, 38, 0.09);
+      --radius: 24px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #111412;
+        --surface: rgba(29, 33, 29, 0.82);
+        --surface-strong: #1b1f1b;
+        --text: #f1eee6;
+        --muted: #aaa99f;
+        --line: rgba(255, 255, 255, 0.11);
+        --accent: #b8c5ad;
+        --accent-soft: #293128;
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 12% 4%, rgba(184, 159, 116, 0.17), transparent 28rem),
+        radial-gradient(circle at 88% 10%, rgba(100, 112, 91, 0.16), transparent 24rem),
+        var(--page);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.78;
+      letter-spacing: 0.01em;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .page {
+      width: min(100%, 880px);
+      margin: 0 auto;
+      padding: max(28px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(48px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--surface-strong);
+      box-shadow: 0 8px 24px rgba(54, 48, 38, 0.08);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+    }
+
+    .switch-link {
+      min-height: 42px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    header { padding: 12px 2px 30px; }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "New York", "Songti SC", "STSong", Georgia, serif;
+      font-size: clamp(38px, 12vw, 66px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .lead {
+      max-width: 660px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 4.2vw, 19px);
+      line-height: 1.75;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .summary,
+    .toc,
+    article {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    .summary {
+      margin: 8px 0 18px;
+      padding: 20px;
+      border-radius: var(--radius);
+    }
+
+    .summary strong { display: block; margin-bottom: 5px; }
+    .summary p { margin: 0; color: var(--muted); }
+
+    .toc {
+      margin: 18px 0;
+      padding: 20px;
+      border-radius: var(--radius);
+    }
+
+    .toc h2 { margin: 0 0 12px; font-size: 17px; }
+    .toc ol { columns: 1; margin: 0; padding-left: 1.35em; }
+    .toc li { margin: 5px 0; padding-left: 3px; color: var(--muted); }
+    .toc a { color: inherit; text-decoration: none; }
+
+    article {
+      margin-top: 18px;
+      padding: clamp(22px, 5vw, 44px);
+      border-radius: var(--radius);
+    }
+
+    section { scroll-margin-top: 24px; }
+    section + section { margin-top: 38px; padding-top: 34px; border-top: 1px solid var(--line); }
+
+    h2 {
+      margin: 0 0 14px;
+      font-family: "New York", "Songti SC", "STSong", Georgia, serif;
+      font-size: clamp(22px, 6vw, 29px);
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+    }
+
+    h3 { margin: 24px 0 8px; font-size: 17px; line-height: 1.55; }
+    p { margin: 10px 0; }
+    ul { margin: 10px 0; padding-left: 1.3em; }
+    li + li { margin-top: 8px; }
+
+    .note {
+      margin: 18px 0;
+      padding: 15px 16px;
+      border-left: 3px solid var(--accent);
+      border-radius: 6px 14px 14px 6px;
+      background: var(--accent-soft);
+    }
+
+    footer {
+      padding: 30px 6px 4px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (min-width: 680px) {
+      .page { padding-top: max(42px, env(safe-area-inset-top)); }
+      .toc ol { columns: 2; column-gap: 34px; }
+      .summary { padding: 24px 26px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    @media print {
+      body { background: #fff; color: #111; }
+      .page { width: 100%; max-width: none; padding: 0; }
+      .switch-link, .toc { display: none; }
+      .summary, article { border: 0; box-shadow: none; background: transparent; }
+      article { padding: 0; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="topbar" aria-label="文档导航">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true">M</span><span>Moments</span></a>
+      <a class="switch-link" href="privacy-policy.html">查看隐私政策</a>
+    </nav>
+
+    <header id="top">
+      <p class="eyebrow">Terms of Use</p>
+      <h1>用户协议</h1>
+      <p class="lead">本协议约定你与 Moments 开发者之间有关下载、访问和使用本应用及 Moments Pro 服务的权利与责任。</p>
+      <div class="meta"><span>版本：1.0</span><span>更新日期：2026 年 7 月 15 日</span><span>生效日期：2026 年 7 月 15 日</span></div>
+    </header>
+
+    <aside class="summary" aria-label="重要提示">
+      <strong>请在使用前仔细阅读</strong>
+      <p>下载、安装、访问或使用 Moments，即表示你已阅读并同意本协议及《隐私政策》。Moments Pro 是由 Apple App Store 处理的一次性非消耗型应用内购买，不是订阅。</p>
+    </aside>
+
+    <nav class="toc" aria-label="目录">
+      <h2>目录</h2>
+      <ol>
+        <li><a href="#acceptance">接受协议</a></li>
+        <li><a href="#service">服务内容</a></li>
+        <li><a href="#eligibility">使用资格</a></li>
+        <li><a href="#license">使用许可</a></li>
+        <li><a href="#content">你的内容</a></li>
+        <li><a href="#conduct">使用规范</a></li>
+        <li><a href="#pro">Moments Pro</a></li>
+        <li><a href="#third-party">Apple 服务</a></li>
+        <li><a href="#changes">服务变更</a></li>
+        <li><a href="#ip">知识产权</a></li>
+        <li><a href="#disclaimer">免责声明</a></li>
+        <li><a href="#liability">责任限制</a></li>
+        <li><a href="#termination">终止</a></li>
+        <li><a href="#privacy">隐私保护</a></li>
+        <li><a href="#law">法律与争议</a></li>
+        <li><a href="#updates">协议更新</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ol>
+    </nav>
+
+    <article>
+      <section id="acceptance">
+        <h2>1. 接受与适用</h2>
+        <p>本协议是你与 Moments 开发者（下称“我们”）之间关于使用 iOS / iPadOS 应用“Moments”、其桌面及锁屏小组件和相关功能（统称“本服务”）的协议。</p>
+        <p>如果你不同意本协议，请不要下载、安装、访问或使用本服务。你同时应遵守 Apple Media Services 条款、App Store 使用规则及适用于你的其他 Apple 条款。</p>
+      </section>
+
+      <section id="service">
+        <h2>2. 服务内容</h2>
+        <p>Moments 是一款本地优先的纪念日与倒数日工具，主要提供：</p>
+        <ul>
+          <li>创建、查看、置顶和删除倒数日或已过天数事件；</li>
+          <li>每年重复、自然日计算、主题卡片、进度与里程碑展示；</li>
+          <li>生成分享卡片并通过系统分享或保存至照片 App；</li>
+          <li>在桌面和锁屏小组件中展示事件；</li>
+          <li>通过一次性购买 Moments Pro 解锁更多主题、不限事件、自定义背景图、可选 iCloud 同步及备用 App 图标。</li>
+        </ul>
+        <p>具体可用功能以你安装的版本、设备、系统地区、Apple 服务状态及 App 内实际页面为准。</p>
+      </section>
+
+      <section id="eligibility">
+        <h2>3. 使用资格与未成年人</h2>
+        <p>你应具备与自身行为相适应的民事行为能力。未成年人应在父母或其他监护人阅读并同意本协议后，在其指导下使用本服务。涉及应用内购买时，应获得付款账户持有人及监护人的明确同意。</p>
+      </section>
+
+      <section id="license">
+        <h2>4. 有限使用许可</h2>
+        <p>在你遵守本协议和 Apple 适用规则的前提下，我们授予你一项个人的、有限的、非独占的、不可转让且可撤销的许可，允许你在自己拥有或控制的兼容 Apple 设备上，以个人、非商业目的安装和使用本应用。</p>
+        <p>本协议仅授予使用许可，不转让本应用或其任何组成部分的所有权。除法律明确允许外，你不得复制、出租、出售、再许可、反向工程、反编译、修改或制作本应用的衍生作品。</p>
+      </section>
+
+      <section id="content">
+        <h2>5. 你的内容与数据备份</h2>
+        <p>你对输入的事件名称、日期、寄语、选择的照片以及生成和分享的内容（统称“你的内容”）保留相应权利，并保证你有权处理和使用这些内容，且不会侵犯他人的隐私、肖像、著作权或其他合法权益。</p>
+        <p>为向你提供服务，你允许本应用在你的设备及你主动启用的 iCloud 私有数据库范围内，对你的内容进行存储、读取、缩放、渲染和同步。此许可仅限实现你请求的功能，并随相关内容删除或服务终止而在合理范围内结束，但系统备份、已分享副本及法律要求保留的内容除外。</p>
+        <p class="note">请自行保留重要日期和图片的其他备份。设备损坏、卸载应用、关闭或退出 iCloud、同步冲突、系统清理及其他超出我们控制的情况，均可能导致数据不可恢复。</p>
+      </section>
+
+      <section id="conduct">
+        <h2>6. 使用规范</h2>
+        <p>你不得利用本服务从事以下行为：</p>
+        <ul>
+          <li>违反适用法律法规、公共秩序或侵害他人合法权益；</li>
+          <li>上传、生成或传播违法、侵权、欺诈、骚扰或恶意内容；</li>
+          <li>绕过、破坏或干扰购买验证、权益门控、安全措施、服务接口或正常运行；</li>
+          <li>未经授权访问他人设备、Apple Account、iCloud 数据或其他系统；</li>
+          <li>以自动化、大规模或其他异常方式滥用本服务，或利用本服务开发竞争性产品；</li>
+          <li>移除、遮盖或修改本应用中的权利声明、品牌标识或水印。</li>
+        </ul>
+      </section>
+
+      <section id="pro">
+        <h2>7. Moments Pro 与应用内购买</h2>
+        <h3>7.1 一次性买断</h3>
+        <p>Moments Pro 当前通过 Apple StoreKit 以非消耗型应用内购买项目提供，产品标识为 <code>com.wyn.moments.pro</code>。它是一次性购买，不会按月或按年自动续费。价格、币种、税费及可购买状态以 App Store 购买确认页面显示为准。</p>
+        <h3>7.2 付款与退款</h3>
+        <p>购买由 Apple 通过你的 Apple Account 处理，付款方式、账单、退款和交易记录受 Apple 的相关政策约束。我们不直接收集你的银行卡等完整付款资料，也不能保证或代替 Apple 批准退款。</p>
+        <h3>7.3 恢复购买</h3>
+        <p>你可以使用应用内的“恢复购买”功能，请求 Apple 重新验证当前 Apple Account 的有效权益。是否可恢复取决于原购买记录、所用 Apple Account、商店地区及 Apple 服务状态；家庭共享仅在 App Store 页面明确支持时适用。</p>
+        <h3>7.4 功能边界</h3>
+        <p>Pro 解锁的是当前版本所列功能使用权，不代表我们承诺永久提供某一特定主题、图标、云服务容量或与未来所有设备和系统版本兼容。我们不会无正当理由剥夺已经购买的核心权益；如需作出重大调整，将依法提供合理说明或解决方式。</p>
+      </section>
+
+      <section id="third-party">
+        <h2>8. Apple 与第三方服务</h2>
+        <p>本服务依赖 Apple 提供的 App Store、StoreKit、CloudKit、iCloud、PhotosUI、照片 App、WidgetKit 和系统分享等能力。这些服务的可用性、数据处理和规则由 Apple 控制。因网络、系统设置、Apple Account、地区限制、服务中断或 Apple 政策变更，部分功能可能暂时或永久不可用。</p>
+        <p>当你通过系统分享面板将卡片发送到第三方应用或服务时，你与该第三方之间的交互受其条款和隐私政策约束。请在分享前确认卡片未包含你不希望公开的日期、姓名、寄语或图片。</p>
+      </section>
+
+      <section id="changes">
+        <h2>9. 服务更新、变更与中断</h2>
+        <p>我们可能为改进体验、修复问题、适配新系统、确保安全或满足法律要求而更新本应用。你理解并同意，应用功能、界面和兼容范围可能随版本变化。</p>
+        <p>我们会尽合理努力保持服务可用，但不保证服务永不中断或没有错误。对于计划中的重大变更，我们会在合理可行且法律要求的范围内通过更新说明、应用内提示或其他方式通知你。</p>
+      </section>
+
+      <section id="ip">
+        <h2>10. 知识产权</h2>
+        <p>除你的内容及第三方依法享有权利的材料外，本应用的软件、界面设计、图形、主题、图标、文字、商标、编排和相关技术成果的知识产权归我们或相应权利人所有。未经书面许可，你不得超出本协议授权范围使用这些内容。</p>
+        <p>通过 Moments 生成的分享卡片可能包含 Moments 名称或水印。该输出不授予你对 Moments 品牌的所有权，也不表示我们对你自行添加的内容作出背书。</p>
+      </section>
+
+      <section id="disclaimer">
+        <h2>11. 免责声明</h2>
+        <p>在适用法律允许的最大范围内，本服务按“现状”和“可用”基础提供。我们不对服务完全无误、持续可用、适合特定用途或数据永不丢失作出超出法律规定的保证。</p>
+        <p>Moments 的日期、周/月换算、里程碑和进度信息用于个人记录与展示，不构成法律、财务、医疗或其他专业意见。因时区、日历、系统设置、闰年规则或用户输入错误产生的显示差异，应以实际日期和权威来源为准。</p>
+        <p>任何免责声明均不排除或限制法律不得排除或限制的消费者权利。</p>
+      </section>
+
+      <section id="liability">
+        <h2>12. 责任限制</h2>
+        <p>在适用法律允许的最大范围内，对于因设备故障、数据删除或同步冲突、第三方服务中断、未经授权的设备或账户访问、用户自行分享内容，或违反本协议使用服务而造成的损失，我们仅在法律要求及可合理归责于我们的范围内承担责任。</p>
+        <p>对于因我们的故意或重大过失造成的人身损害、欺诈，或依据适用消费者保护法律不得限制的责任，本协议不作排除或限制。</p>
+      </section>
+
+      <section id="termination">
+        <h2>13. 暂停与终止</h2>
+        <p>你可以随时停止使用并卸载本应用，也可以删除应用内事件或关闭 iCloud 同步。请注意，卸载应用、删除本地数据和删除 iCloud 数据是不同操作，具体处理方式请参阅《隐私政策》。</p>
+        <p>如你严重违反本协议、法律要求我们采取措施，或继续提供服务会造成安全或法律风险，我们可以在合理必要范围内限制或终止相关服务。终止后，本协议中依其性质应继续有效的知识产权、责任、争议解决等条款仍然有效。</p>
+      </section>
+
+      <section id="privacy">
+        <h2>14. 隐私保护</h2>
+        <p>我们如何处理纪念日数据、照片、iCloud 同步记录和购买权益状态，详见 <a href="privacy-policy.html">《Moments 隐私政策》</a>。隐私政策是本协议的重要组成部分。</p>
+      </section>
+
+      <section id="law">
+        <h2>15. 适用法律与争议解决</h2>
+        <p>本协议的订立、效力、履行和解释适用对你具有强制适用效力的法律法规。在不影响你依法享有的消费者权益和法定管辖权的前提下，因本协议产生的争议应首先通过友好协商解决；协商不成的，任何一方可向依法具有管辖权的法院或其他争议解决机构寻求解决。</p>
+        <p>如本协议任何条款被认定为无效或不可执行，其余条款仍继续有效。我们未立即行使某项权利，不构成对该权利的放弃。</p>
+      </section>
+
+      <section id="updates">
+        <h2>16. 协议更新</h2>
+        <p>我们可能因服务功能、商业模式或法律要求变化更新本协议。更新后会修改页面顶部日期；如变更对你的权利义务具有重大影响，我们会通过应用内提示、版本更新说明或其他合理方式告知你。法律要求取得单独同意的，我们将依法征得你的同意。</p>
+      </section>
+
+      <section id="contact">
+        <h2>17. 联系我们</h2>
+        <p>如对本协议、Moments Pro 或本服务有疑问或意见，请发送邮件至 <a href="mailto:wyn021126@gmail.com">wyn021126@gmail.com</a>，或访问 <a href="technical-support.html">Moments 技术支持</a>页面。</p>
+      </section>
+    </article>
+
+    <footer><a href="technical-support.html">技术支持</a> · Moments · 让每一个重要日子，都被认真记住</footer>
+  </main>
+</body>
+</html>

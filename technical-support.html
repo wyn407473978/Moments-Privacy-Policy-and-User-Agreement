@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111412" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Moments 技术支持：获取纪念日、iCloud 同步、小组件、照片分享和 Moments Pro 相关帮助。">
+  <title>技术支持 · Moments</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --page: #f6f2ea;
+      --surface: rgba(255, 255, 255, 0.78);
+      --surface-strong: #fffdf8;
+      --text: #272923;
+      --muted: #6f7169;
+      --line: rgba(39, 41, 35, 0.12);
+      --accent: #64705b;
+      --accent-ink: #ffffff;
+      --accent-soft: #e5e8df;
+      --shadow: 0 24px 70px rgba(54, 48, 38, 0.09);
+      --radius: 24px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #111412;
+        --surface: rgba(29, 33, 29, 0.82);
+        --surface-strong: #1b1f1b;
+        --text: #f1eee6;
+        --muted: #aaa99f;
+        --line: rgba(255, 255, 255, 0.11);
+        --accent: #b8c5ad;
+        --accent-ink: #182018;
+        --accent-soft: #293128;
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 12% 4%, rgba(184, 159, 116, 0.17), transparent 28rem),
+        radial-gradient(circle at 88% 10%, rgba(100, 112, 91, 0.16), transparent 24rem),
+        var(--page);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.78;
+      letter-spacing: 0.01em;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 5px;
+    }
+
+    .page {
+      width: min(100%, 880px);
+      margin: 0 auto;
+      padding: max(28px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(48px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--surface-strong);
+      box-shadow: 0 8px 24px rgba(54, 48, 38, 0.08);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+    }
+
+    .switch-link {
+      min-height: 42px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    header { padding: 12px 2px 30px; }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "New York", "Songti SC", "STSong", Georgia, serif;
+      font-size: clamp(38px, 12vw, 66px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .lead {
+      max-width: 660px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 4.2vw, 19px);
+      line-height: 1.75;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-card,
+    .topic,
+    .details,
+    .related {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    .contact-card {
+      margin: 8px 0 20px;
+      padding: clamp(22px, 5vw, 34px);
+      border-radius: var(--radius);
+    }
+
+    .contact-card h2 { margin-top: 0; }
+    .contact-card p { margin: 8px 0 20px; color: var(--muted); }
+
+    .email-button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 14px;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-size: 15px;
+      font-weight: 750;
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(54, 48, 38, 0.14);
+    }
+
+    .section-heading { margin: 42px 2px 18px; }
+    .section-heading p { margin: 6px 0 0; color: var(--muted); }
+
+    h2 {
+      margin: 0 0 10px;
+      font-family: "New York", "Songti SC", "STSong", Georgia, serif;
+      font-size: clamp(22px, 6vw, 29px);
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+    }
+
+    h3 { margin: 0 0 8px; font-size: 17px; line-height: 1.55; }
+    p { margin: 10px 0; }
+    ul, ol { margin: 10px 0; padding-left: 1.3em; }
+    li + li { margin-top: 8px; }
+
+    .topics {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .topic {
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .topic p { margin: 0; color: var(--muted); }
+
+    .details,
+    .related {
+      margin-top: 20px;
+      padding: clamp(22px, 5vw, 34px);
+      border-radius: var(--radius);
+    }
+
+    .details strong { color: var(--text); }
+
+    .note {
+      margin: 18px 0 0;
+      padding: 15px 16px;
+      border-left: 3px solid var(--accent);
+      border-radius: 6px 14px 14px 6px;
+      background: var(--accent-soft);
+    }
+
+    .related-links {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .related-links a {
+      display: flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface-strong);
+      color: var(--text);
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .related-links a::after { content: "›"; color: var(--muted); font-size: 22px; }
+
+    footer {
+      padding: 30px 6px 4px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (min-width: 680px) {
+      .page { padding-top: max(42px, env(safe-area-inset-top)); }
+      .topics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .related-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    @media print {
+      body { background: #fff; color: #111; }
+      .page { width: 100%; max-width: none; padding: 0; }
+      .switch-link { display: none; }
+      .contact-card, .topic, .details, .related { border: 1px solid #ddd; box-shadow: none; background: transparent; }
+      .email-button { border: 1px solid #111; background: transparent; color: #111; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="topbar" aria-label="文档导航">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true">M</span><span>Moments</span></a>
+      <a class="switch-link" href="privacy-policy.html">查看隐私政策</a>
+    </nav>
+
+    <header id="top">
+      <p class="eyebrow">Technical Support</p>
+      <h1>技术支持</h1>
+      <p class="lead">使用 Moments 时遇到问题？这里整理了常见解决方法。你也可以直接通过邮件联系我们。</p>
+      <div class="meta"><span>适用版本：Moments 1.0.0 及后续版本</span><span>更新日期：2026 年 7 月 15 日</span></div>
+    </header>
+
+    <section class="contact-card" aria-labelledby="contact-title">
+      <h2 id="contact-title">联系我们</h2>
+      <p>请在邮件中说明设备型号、iOS / iPadOS 版本、Moments 版本和问题复现步骤。如方便，可附上不包含敏感信息的截图。</p>
+      <a class="email-button" href="mailto:wyn021126@gmail.com">发送邮件至 wyn021126@gmail.com</a>
+    </section>
+
+    <div class="section-heading">
+      <h2>常见问题</h2>
+      <p>你可以先尝试以下步骤，很多问题无需等待回复即可解决。</p>
+    </div>
+
+    <section class="topics" aria-label="常见问题列表">
+      <article class="topic">
+        <h3>Moments Pro 无法解锁</h3>
+        <p>确认设备已登录购买时使用的 Apple Account，并保持网络连接，然后在 App 内点击“恢复购买”。购买和退款状态由 Apple App Store 处理。</p>
+      </article>
+
+      <article class="topic">
+        <h3>iCloud 没有同步</h3>
+        <p>确认 Moments Pro 已解锁、系统已登录 iCloud 且 iCloud Drive 可用。切换 Moments 的 iCloud 同步设置后，请完全退出并重新打开 App，再留出一些同步时间。</p>
+      </article>
+
+      <article class="topic">
+        <h3>小组件没有更新</h3>
+        <p>先打开 Moments 确认事件仍然存在，再返回桌面等待系统刷新。仍未恢复时，可以移除小组件后重新添加，并重新选择需要展示的事件。</p>
+      </article>
+
+      <article class="topic">
+        <h3>无法保存分享图片</h3>
+        <p>请在系统“设置”中确认 Moments 具有添加照片的权限。若不希望授予该权限，也可以使用系统分享面板将卡片发送到其他 App。</p>
+      </article>
+
+      <article class="topic">
+        <h3>自定义背景未同步</h3>
+        <p>这是当前版本的正常行为。自定义背景图片仅保存在本机 App Group 中，不会上传到 CloudKit；在另一台设备上需要重新选择背景图片。</p>
+      </article>
+
+      <article class="topic">
+        <h3>日期或天数显示异常</h3>
+        <p>Moments 按本地时区的自然日计算。请检查设备日期、时间、时区及事件日期是否正确；2 月 29 日的年度重复事件会在非闰年按 2 月 28 日处理。</p>
+      </article>
+    </section>
+
+    <section class="details" aria-labelledby="report-title">
+      <h2 id="report-title">提交问题时请包含</h2>
+      <ol>
+        <li><strong>问题现象：</strong>你原本希望发生什么，实际发生了什么；</li>
+        <li><strong>复现步骤：</strong>从打开 App 开始，你依次进行了哪些操作；</li>
+        <li><strong>设备信息：</strong>设备型号、iOS / iPadOS 版本和 Moments 版本；</li>
+        <li><strong>相关状态：</strong>问题是否涉及 Pro、iCloud、小组件、照片或分享；</li>
+        <li><strong>辅助材料：</strong>如方便，可附上经过遮挡处理的截图或录屏。</li>
+      </ol>
+      <p class="note"><strong>请勿通过邮件发送</strong> Apple Account 密码、验证码、银行卡信息、完整付款凭证，或你不希望他人看到的纪念日、照片和寄语。</p>
+    </section>
+
+    <section class="related" aria-labelledby="related-title">
+      <h2 id="related-title">相关文档</h2>
+      <p>了解 Moments 如何处理数据，以及使用本服务时的权利与责任。</p>
+      <div class="related-links">
+        <a href="privacy-policy.html">隐私政策</a>
+        <a href="user-agreement.html">用户协议</a>
+      </div>
+    </section>
+
+    <footer>Moments · 感谢你的使用与反馈</footer>
+  </main>
+</body>
+</html>

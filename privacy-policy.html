@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111412" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Moments 隐私政策，说明纪念日数据、iCloud 同步、照片、购买及其他信息的处理方式。">
+  <title>隐私政策 · Moments</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --page: #f6f2ea;
+      --surface: rgba(255, 255, 255, 0.78);
+      --surface-strong: #fffdf8;
+      --text: #272923;
+      --muted: #6f7169;
+      --line: rgba(39, 41, 35, 0.12);
+      --accent: #64705b;
+      --accent-soft: #e5e8df;
+      --shadow: 0 24px 70px rgba(54, 48, 38, 0.09);
+      --radius: 24px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #111412;
+        --surface: rgba(29, 33, 29, 0.82);
+        --surface-strong: #1b1f1b;
+        --text: #f1eee6;
+        --muted: #aaa99f;
+        --line: rgba(255, 255, 255, 0.11);
+        --accent: #b8c5ad;
+        --accent-soft: #293128;
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 12% 4%, rgba(184, 159, 116, 0.17), transparent 28rem),
+        radial-gradient(circle at 88% 10%, rgba(100, 112, 91, 0.16), transparent 24rem),
+        var(--page);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.78;
+      letter-spacing: 0.01em;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .page {
+      width: min(100%, 880px);
+      margin: 0 auto;
+      padding: max(28px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(48px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--surface-strong);
+      box-shadow: 0 8px 24px rgba(54, 48, 38, 0.08);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+    }
+
+    .switch-link {
+      min-height: 42px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    header { padding: 12px 2px 30px; }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "New York", "Songti SC", "STSong", Georgia, serif;
+      font-size: clamp(38px, 12vw, 66px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .lead {
+      max-width: 660px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 4.2vw, 19px);
+      line-height: 1.75;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .summary,
+    .toc,
+    article {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    .summary {
+      margin: 8px 0 18px;
+      padding: 20px;
+      border-radius: var(--radius);
+    }
+
+    .summary strong { display: block; margin-bottom: 5px; }
+    .summary p { margin: 0; color: var(--muted); }
+
+    .toc {
+      margin: 18px 0;
+      padding: 20px;
+      border-radius: var(--radius);
+    }
+
+    .toc h2 { margin: 0 0 12px; font-size: 17px; }
+    .toc ol { columns: 1; margin: 0; padding-left: 1.35em; }
+    .toc li { margin: 5px 0; padding-left: 3px; color: var(--muted); }
+    .toc a { color: inherit; text-decoration: none; }
+
+    article {
+      margin-top: 18px;
+      padding: clamp(22px, 5vw, 44px);
+      border-radius: var(--radius);
+    }
+
+    section { scroll-margin-top: 24px; }
+    section + section { margin-top: 38px; padding-top: 34px; border-top: 1px solid var(--line); }
+
+    h2 {
+      margin: 0 0 14px;
+      font-family: "New York", "Songti SC", "STSong", Georgia, serif;
+      font-size: clamp(22px, 6vw, 29px);
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+    }
+
+    h3 { margin: 24px 0 8px; font-size: 17px; line-height: 1.55; }
+    p { margin: 10px 0; }
+    ul { margin: 10px 0; padding-left: 1.3em; }
+    li + li { margin-top: 8px; }
+
+    .note {
+      margin: 18px 0;
+      padding: 15px 16px;
+      border-left: 3px solid var(--accent);
+      border-radius: 6px 14px 14px 6px;
+      background: var(--accent-soft);
+    }
+
+    .data-table {
+      width: 100%;
+      margin: 18px 0;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 13px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .data-table th { color: var(--muted); font-size: 12px; letter-spacing: 0.05em; }
+
+    footer {
+      padding: 30px 6px 4px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (min-width: 680px) {
+      .page { padding-top: max(42px, env(safe-area-inset-top)); }
+      .toc ol { columns: 2; column-gap: 34px; }
+      .summary { padding: 24px 26px; }
+    }
+
+    @media (max-width: 520px) {
+      .data-table,
+      .data-table tbody,
+      .data-table tr,
+      .data-table th,
+      .data-table td { display: block; }
+      .data-table thead { display: none; }
+      .data-table tr { padding: 12px 0; border-bottom: 1px solid var(--line); }
+      .data-table td { padding: 3px 0; border: 0; }
+      .data-table td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 12px; font-weight: 700; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    @media print {
+      body { background: #fff; color: #111; }
+      .page { width: 100%; max-width: none; padding: 0; }
+      .switch-link, .toc { display: none; }
+      .summary, article { border: 0; box-shadow: none; background: transparent; }
+      article { padding: 0; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="topbar" aria-label="文档导航">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true">M</span><span>Moments</span></a>
+      <a class="switch-link" href="user-agreement.html">查看用户协议</a>
+    </nav>
+
+    <header id="top">
+      <p class="eyebrow">Privacy Policy</p>
+      <h1>隐私政策</h1>
+      <p class="lead">我们珍视那些对你重要的日子，也同样珍视你的个人信息。本政策说明 Moments 如何处理纪念日数据、照片、iCloud 同步及购买信息。</p>
+      <div class="meta"><span>版本：1.0</span><span>更新日期：2026 年 7 月 15 日</span><span>生效日期：2026 年 7 月 15 日</span></div>
+    </header>
+
+    <aside class="summary" aria-label="隐私摘要">
+      <strong>隐私摘要</strong>
+      <p>Moments 采用本地优先设计，不含广告、第三方统计或跨 App 追踪。只有在你主动开启 Pro iCloud 同步时，结构化事件数据才会存入你的 iCloud 私有数据库；自定义背景图片不会上传至 iCloud。</p>
+    </aside>
+
+    <nav class="toc" aria-label="目录">
+      <h2>目录</h2>
+      <ol>
+        <li><a href="#scope">适用范围</a></li>
+        <li><a href="#data">处理的信息</a></li>
+        <li><a href="#purpose">处理目的</a></li>
+        <li><a href="#storage">存储与同步</a></li>
+        <li><a href="#sharing">共享与披露</a></li>
+        <li><a href="#permissions">系统权限</a></li>
+        <li><a href="#retention">保存与删除</a></li>
+        <li><a href="#security">信息安全</a></li>
+        <li><a href="#rights">你的权利</a></li>
+        <li><a href="#children">未成年人保护</a></li>
+        <li><a href="#changes">政策更新</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ol>
+    </nav>
+
+    <article>
+      <section id="scope">
+        <h2>1. 适用范围</h2>
+        <p>本隐私政策适用于 iOS / iPadOS 应用“Moments”（下称“本应用”）及其桌面和锁屏小组件。Moments 开发者（下称“我们”）负责说明本应用中的个人信息处理活动。</p>
+        <p>Apple 提供的 App Store、iCloud、照片、系统分享及应用内购买等服务遵循 Apple 自身的隐私政策和服务条款；本政策不替代 Apple 对其服务所作的说明。</p>
+      </section>
+
+      <section id="data">
+        <h2>2. 我们处理的信息</h2>
+        <h3>2.1 你创建的纪念日内容</h3>
+        <p>为了提供核心功能，本应用会处理你主动输入或选择的内容，包括事件名称、目标日期、倒数或已过类型、每年重复设置、主题、可选寄语、置顶状态、排序信息以及随机生成的事件标识。</p>
+
+        <h3>2.2 你选择的照片</h3>
+        <p>Pro 用户可以通过 Apple 的系统照片选择器选择图片作为自定义背景。本应用仅接收你明确选择的图片，并将其副本保存在应用的本地共享容器中，以供主应用与小组件显示。模型中只记录本地文件名；自定义背景图片不会通过 Moments 上传至 CloudKit。</p>
+
+        <h3>2.3 iCloud 同步数据</h3>
+        <p>当 Pro 用户主动开启 iCloud 同步后，本应用会使用 Apple CloudKit，将事件的结构化数据写入与你 Apple Account 关联的 CloudKit 私有数据库，用于你本人设备之间的同步。这些数据可能包括第 2.1 节所列字段和本地背景图片的文件名，但不包括背景图片文件本身。</p>
+
+        <h3>2.4 购买与权益状态</h3>
+        <p>当你购买或恢复 Moments Pro 时，本应用通过 StoreKit 2 获取由 Apple 提供的商品信息、交易验证结果及当前权益状态，以判断是否解锁 Pro 功能。支付账户、银行卡等付款信息由 Apple 处理，我们无法访问这些完整付款资料。</p>
+
+        <h3>2.5 我们当前不处理的信息</h3>
+        <p>当前版本不要求注册 Moments 账号，不集成广告 SDK 或第三方统计 SDK，也不进行跨 App 或跨网站追踪。本应用不请求定位、通讯录、麦克风或相机权限。</p>
+
+        <table class="data-table">
+          <thead><tr><th>信息类别</th><th>来源</th><th>默认位置</th><th>用途</th></tr></thead>
+          <tbody>
+            <tr><td data-label="信息类别">纪念日与设置</td><td data-label="来源">你主动创建</td><td data-label="默认位置">设备及 App Group</td><td data-label="用途">展示、计算、分享和小组件</td></tr>
+            <tr><td data-label="信息类别">自定义背景图</td><td data-label="来源">你通过系统选择器选择</td><td data-label="默认位置">设备本地 App Group</td><td data-label="用途">事件卡片与小组件背景</td></tr>
+            <tr><td data-label="信息类别">CloudKit 事件记录</td><td data-label="来源">开启同步后的事件数据</td><td data-label="默认位置">你的 iCloud 私有数据库</td><td data-label="用途">多设备同步</td></tr>
+            <tr><td data-label="信息类别">Pro 权益状态</td><td data-label="来源">Apple StoreKit</td><td data-label="默认位置">Apple 服务与本地状态</td><td data-label="用途">购买、恢复与解锁功能</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="purpose">
+        <h2>3. 信息处理目的</h2>
+        <p>我们仅在实现下列功能所需的范围内处理信息：</p>
+        <ul>
+          <li>创建、展示、置顶、删除纪念日，并按自然日计算倒数或已过天数；</li>
+          <li>生成主题卡片、进度信息、里程碑和分享图片；</li>
+          <li>在桌面或锁屏小组件中显示你选择的事件；</li>
+          <li>在你开启同步后，通过 iCloud 在你的设备间同步结构化事件数据；</li>
+          <li>处理 Moments Pro 的购买、恢复购买和权益验证；</li>
+          <li>响应你的支持请求、履行法律义务并维护服务安全。</li>
+        </ul>
+      </section>
+
+      <section id="storage">
+        <h2>4. 本地存储与 iCloud 同步</h2>
+        <p><strong>默认情况下：</strong>事件数据保存在你的设备沙盒及 App Group 共享容器中，使主应用和 Moments 小组件能够读取同一份数据。</p>
+        <p><strong>开启同步后：</strong>结构化事件数据会通过 Apple CloudKit 存储在你的 iCloud 私有数据库中。数据的传输、跨境处理和基础设施安全由 Apple 的服务机制共同保障，并受你的 iCloud 设置、Apple Account 状态和 Apple 相关条款影响。</p>
+        <p class="note">关闭 iCloud 同步将停止本应用后续的云端同步，但不一定自动删除此前已写入 iCloud 的记录。你可以通过删除应用内事件及 Apple 提供的 iCloud 数据管理功能管理相关数据。</p>
+      </section>
+
+      <section id="sharing">
+        <h2>5. 信息共享、转移与公开披露</h2>
+        <p>我们不出售你的个人信息，也不会为广告目的共享你的纪念日内容。仅在以下情形中可能发生数据流转：</p>
+        <ul>
+          <li><strong>Apple 服务：</strong>为实现 iCloud 同步、应用内购买、照片保存及系统能力，信息会由相应 Apple 服务处理；</li>
+          <li><strong>由你主动分享：</strong>当你使用系统分享面板发送纪念日卡片时，接收方或第三方应用将按你的选择获得该图片。离开 Moments 后的信息处理受相应服务的规则约束；</li>
+          <li><strong>法律要求：</strong>为遵守适用法律、司法或行政机关的有效要求，或保护用户、公众及我们的合法权益，可能在必要范围内披露信息；</li>
+          <li><strong>业务变更：</strong>如发生合并、转让或运营主体变更，我们会要求承接方继续受本政策约束，并在法律要求时另行告知你。</li>
+        </ul>
+      </section>
+
+      <section id="permissions">
+        <h2>6. 系统权限与设备能力</h2>
+        <h3>照片选择</h3>
+        <p>当你主动选择自定义背景图时，本应用调用 Apple 的系统照片选择器。你可以仅授权所选内容，无需向本应用开放整个照片图库。</p>
+        <h3>添加到照片</h3>
+        <p>当你点击保存分享卡片时，本应用会请求“仅添加照片”相关权限，用于把生成的图片写入照片 App。拒绝该权限不会影响纪念日管理等其他核心功能，你仍可使用系统分享功能。</p>
+        <h3>小组件与 App Group</h3>
+        <p>本应用使用 App Group 在主应用与 Moments Widget 之间共享事件数据和本地背景图片。这是同一开发者应用组件间的本地共享，不会因此发送到我们的服务器。</p>
+        <p>你可以在 iOS / iPadOS 的“设置”中管理相关权限；系统版本不同，菜单名称和位置可能有所差异。</p>
+      </section>
+
+      <section id="retention">
+        <h2>7. 信息保存、导出与删除</h2>
+        <ul>
+          <li>本地事件和背景图片通常保存至你主动删除相应事件、删除应用或系统清理应用数据为止；</li>
+          <li>你可在本应用中删除事件。与该事件关联的本地记录将被移除；同步开启时，删除操作可能同步到同一 Apple Account 下的其他设备；</li>
+          <li>卸载应用通常会删除应用沙盒数据，但 iCloud 私有数据库中的既有数据以及 App Group 数据的清理行为可能受到系统机制影响；</li>
+          <li>分享卡片一旦保存到照片 App 或发送至第三方，其副本需在对应位置另行管理；</li>
+          <li>StoreKit 交易记录由 Apple 按其规则保存，我们无法代替 Apple 删除法定交易记录。</li>
+        </ul>
+      </section>
+
+      <section id="security">
+        <h2>8. 信息安全</h2>
+        <p>我们通过本地优先、最小权限、系统照片选择器、StoreKit 交易验证及 CloudKit 私有数据库等方式降低数据风险。但任何电子存储或网络传输都无法保证绝对安全。请妥善保护设备密码与 Apple Account，并及时安装系统安全更新。</p>
+        <p>如发生可能对你的权益造成影响的安全事件，我们将按照适用法律要求采取补救措施，并在需要时通过合理方式告知你。</p>
+      </section>
+
+      <section id="rights">
+        <h2>9. 你的权利</h2>
+        <p>在适用法律规定的范围内，你可能享有访问、更正、复制、删除个人信息，限制或撤回同意，以及注销相关服务等权利。Moments 不设独立账号，你通常可以直接在应用内查看或删除事件，在系统设置中撤回照片权限或关闭 iCloud 同步。</p>
+        <p>撤回授权不影响撤回前基于授权已进行处理的合法性；部分信息处理是提供你主动请求的功能所必需，拒绝或撤回后，对应功能可能无法使用。</p>
+      </section>
+
+      <section id="children">
+        <h2>10. 未成年人保护</h2>
+        <p>Moments 是通用效率工具，不以未成年人为专门服务对象，也不会基于年龄投放广告。未成年人应在父母或其他监护人指导下使用本应用、填写涉及本人或他人的纪念日内容及进行购买。监护人如认为未成年人的信息被不当处理，可通过本政策所列方式联系我们。</p>
+      </section>
+
+      <section id="changes">
+        <h2>11. 本政策的更新</h2>
+        <p>我们可能因功能、技术或法律要求变化更新本政策。更新后会修改页面顶部的日期；如变更对你的权利具有重大影响，我们会通过应用内提示、版本更新说明或其他合理方式告知你。未经你明确同意，我们不会削减你依据当时有效政策应享有的权利。</p>
+      </section>
+
+      <section id="contact">
+        <h2>12. 联系我们</h2>
+        <p>如对本政策、个人信息处理或你的权利有疑问、意见或请求，请发送邮件至 <a href="mailto:wyn021126@gmail.com">wyn021126@gmail.com</a>，或访问 <a href="technical-support.html">Moments 技术支持</a>页面。为保护你的信息，我们可能需要在处理特定请求前核验必要身份信息。</p>
+        <p>我们会在适用法律规定的期限内审查并回复合理请求。</p>
+      </section>
+    </article>
+
+    <footer><a href="technical-support.html">技术支持</a> · Moments · 留住重要时刻，也守护属于你的数据</footer>
+  </main>
+</body>
+</html>
